@@ -18,7 +18,15 @@ T.RandomResizedCrop(n)将给定图像随机裁剪为不同的大小和宽高比�
 
 参考：https://blog.csdn.net/qq_32425195/article/details/84998030
 
+## 1.3 torchvision.transforms.ToTensor
 
+Convert a `PIL Image` or `numpy.ndarray` to tensor.
+
+如果是PIL Image或者ndarray，并且数值在[0, 255]，则把形状转换成 (C x H x W) 并且数值从 [0, 255] 缩放到 [0.0, 1.0]。其它情况下仅仅把格式返回成tensor不进行缩放。
+
+Converts a PIL Image or numpy.ndarray (H x W x C) in the range [0, 255] to a torch.FloatTensor of shape (C x H x W) in the range [0.0, 1.0] if the PIL Image belongs to one of the modes (L, LA, P, I, F, RGB, YCbCr, RGBA, CMYK, 1) or if the numpy.ndarray has dtype = np.uint8
+
+In the other cases, tensors are returned without scaling.
 
 # 2. torch.nn
 
